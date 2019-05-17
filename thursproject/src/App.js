@@ -11,12 +11,19 @@ function App(props) {
     localStorage.removeItem('token')
     props.history.push('/login')
   }
+const link = {
+  border: '1px solid #ccc',
+  backgroundColor: 'white',
+  textDecoration: 'none',
+  color: "black",
+  borderRadius: '3px'
+} 
 
   return (
     <div className="App">
       <header className="App-header">
-        <NavLink to='/login'>Login</NavLink>
-        <NavLink to='/users'>Users</NavLink>
+        <NavLink style={link} to='/login'>Login</NavLink>
+        <NavLink style={link} to='/users'>Users</NavLink>
         <button onClick={logout}>Log Out</button>
       </header>
       <Route path="/login" component={Login} />

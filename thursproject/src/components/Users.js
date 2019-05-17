@@ -34,15 +34,25 @@ componentDidMount() {
 
 
   render() {
+
+    // styles
+    const users = {
+      border: '1px solid black',
+      borderRadius: "3px",
+      boxShadow: "3px 3px 3px #ccc",
+      width: '60%',
+      margin: '16px auto'
+    }
+
     return (
-      <div>
+      <div style={users} >
           <h2>Users</h2>
             {this.state.users.map(u => {
                 return (
-                    <>
+                    <div style={users}>
                 <li key={u.id}>{u.username}</li>
                 <li key={u.id}>{u.password}</li>
-                </>
+                </div>
             )})}
       </div>
     )
